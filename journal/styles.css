@@ -1,0 +1,72 @@
+body {
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+article {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    font-family: "Reenie Beanie", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.7em;
+      
+}
+
+article * {
+    text-align: left; 
+    max-width: 100%; 
+}
+
+
+h1 {
+    font-size: 4em;
+    color: #222;
+    padding: 40px 80px;
+    margin: 0 auto;
+    font-family: "Londrina Sketch", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #222;
+}
+
+date {
+    display: block; 
+    text-align: center; 
+    font-size: 1em;
+    color: #888;
+
+}
+
+
+p {
+    max-width: 40em; 
+    margin-bottom: 1.5em;
+}
+
+a {
+    color: #c9aaea;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #382baa;
+}
+
