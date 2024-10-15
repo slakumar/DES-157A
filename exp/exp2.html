@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2</title>
+</head>
+<body>
+    <h1>Guess the Color!</h1>
+    
+    <p id="result"></p>
+
+    <script>
+        // Array of possible colors
+        var colors = ['pink', 'purple', 'green', 'blue'];
+
+        // Function to randomly select a color from the array
+        function pickRandomColor() {
+            var randomIndex = Math.floor(Math.random() * colors.length);
+            return colors[randomIndex];
+        }
+
+        // Function to prompt the user for input and compare their guess with the picked color
+        function guessColor() {
+            // Prompt user to input a color (not case-sensitive)
+            var userGuess = prompt("Enter your guess: pink, purple, green, or blue").toLowerCase();
+            
+            // Randomly pick a color
+            var selectedColor = pickRandomColor();
+            
+            // Compare the user's guess with the randomly selected color
+            if (userGuess === selectedColor) {
+                document.getElementById('result').textContent = "You are right!";
+            } else {
+                document.getElementById('result').textContent = "Try again! I was thinking of " + selectedColor;
+            }
+        }
+
+        // Call guessColor when the page loads
+        window.onload = function() {
+            guessColor();
+        };
+    </script>
+
+</body>
+</html>
