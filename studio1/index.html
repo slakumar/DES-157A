@@ -16,16 +16,16 @@
     <!-- Styles.css -->
     <link rel="stylesheet" href="styles.css">
 
+    <!-- JS Script -->
+    <script src="script.js" defer></script>
+
 </head>
 <body>
 
-    <!-- Container for overlaying elements on background image -->
+    <!-- Main Content with Form -->
     <div class="overlay-container">
-        
-        <!-- Image on the left side -->
         <img src="images/picnic-basket.png" alt="Picnic basket image" class="left-image">
         
-        <!-- Form container on the right -->
         <main class="form-container">
             <header>
                 <h1>Fill in Your Ultimate Picnic Packing List!</h1>
@@ -52,5 +52,14 @@
         </main>
     </div>
 
+    <!-- Overlay for Displaying Result -->
+    <div id="madLibOverlay" class="madlib-overlay hidden">
+        <div class="madlib-content">
+            <p id="madLibResult"></p>
+            <button id="closeOverlay">Close</button>
+        </div>
+    </div>
+
 </body>
+
 </html>
