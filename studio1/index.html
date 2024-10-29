@@ -5,73 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mad Lib Form</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Danfo&display=swap" rel="stylesheet">
+    
     <!-- Normalize.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
     <!-- Styles.css -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- JavaScript file -->
-    <script src="script.js" defer></script>
 </head>
 <body>
 
-    <header>
-        <h1>Fill in Your Ultimate Picnic Packing List!</h1>
-    </header>
+    <!-- Container for overlaying elements on background image -->
+    <div class="overlay-container">
+        
+        <!-- Image on the left side -->
+        <img src="images/picnic basket.png" alt="Picnic basket image" class="left-image">
+        
+        <!-- Form container on the right -->
+        <main class="form-container">
+            <header>
+                <h1>Fill in Your Ultimate Picnic Packing List!</h1>
+            </header>
 
-    <main>
-        <form id="madLibForm">
-            <label for="adjective1">Give me an adjective: </label>
-            <input type="text" id="adjective1" required>
-            
-            <label for="adjective2">Give me another adjective: </label>
-            <input type="text" id="adjective2" required>
-            
-            <label for="pluralNoun">Give me a plural noun: </label>
-            <input type="text" id="pluralNoun" required>
-            
-            <label for="liquid">Give me a type of liquid: </label>
-            <input type="text" id="liquid" required>
-            
-            <label for="noun1">Give me a noun: </label>
-            <input type="text" id="noun1" required>
-            
-            <label for="adjective3">Give me another adjective: </label>
-            <input type="text" id="adjective3" required>
-            
-            <label for="noun2">Give me one more noun: </label>
-            <input type="text" id="noun2" required>
-            
-            <label for="pluralAnimal">Give me a plural animal: </label>
-            <input type="text" id="pluralAnimal" required>
-            
-            <label for="foodItem">Give me a type of food item: </label>
-            <input type="text" id="foodItem" required>
-            
-            <label for="adjective4">Give me a final adjective: </label>
-            <input type="text" id="adjective4" required>
-            
-            <input type="submit" value="Generate Mad Lib">
-        </form>
-    </main>
+            <form id="madLibForm">
+                <label for="noun">Give me a noun: </label>
+                <input type="text" id="noun" name="noun" required>
 
-    <!-- Modal Overlay -->
-    <div id="overlay">
-        <div id="modal">
-            <h2>Your Picnic Packing Mad Lib</h2>
-            <div id="madLibResult">
-                <ul>
-                    <!-- The results will be injected here -->
-                </ul>
-            </div>
-            <button id="closeModal">Close</button>
-        </div>
+                <label for="food">Give me a type of food: </label>
+                <input type="text" id="food" name="food" required>
+
+                <label for="adjective">Give me an adjective: </label>
+                <input type="text" id="adjective" name="adjective" required>
+
+                <label for="pluralNoun">Give me a plural noun: </label>
+                <input type="text" id="pluralNoun" name="pluralNoun" required>
+
+                <label for="place">Give me a place: </label>
+                <input type="text" id="place" name="place" required>
+
+                <input type="submit" value="Generate Mad Lib">
+            </form>
+        </main>
     </div>
-
-    <footer>
-       
-    </footer>
 
 </body>
 </html>
