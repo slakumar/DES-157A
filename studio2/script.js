@@ -1,52 +1,50 @@
+(function(){
+    "use strict";
+    console.log('reading js');
 
-    let currentIndex = 0; // Track current candle index
+    // Function to detect if 75% of the element is in view
+    function isInView(element) {
+        const rect = element.getBoundingClientRect();
+        const elementHeight = rect.height || element.offsetHeight; // Get element height
+        const threshold = elementHeight * 0.75; //Threshold at least 75% of element's height
 
-    // Array of candle image sources and descriptions
-    const candles = [
-      { src: 'images/chocolate-croissant-Background-Removed.png', description: 'Lavender Bliss' },
-      { src: 'images/ladybird-Background-Removed.png', description: 'Vanilla Dream' },
-      { src: 'images/pink-lavender-espresso-Background-Removed.png', description: 'Rose Garden' },
-      { src: 'images/vanilla-chai-Background-Removed.png', description: 'Chai' }
-    ];
-
-    function showCandle(index) {
-        const zoomedIn = document.getElementById('zoomedIn');
-        const zoomedImage = document.getElementById('zoomedImage');
-        const overlay = document.getElementById('overlay');
-
-        // Set the image and description for the zoomed-in view
-        zoomedImage.src = candles[index].src;
-        overlay.innerText = candles[index].description;
-
-        // Show the zoomed-in section
-        zoomedIn.style.display = 'block';
-
-        // Set the current index based on the clicked candle
-        currentIndex = index;
+        return (
+            rect.top >= -threshold && 
+            rect.bottom <= window.innerHeight + threshold // Section must be mostly in view
+        );
     }
 
-    // Handle scrolling to change the image and text
-    let lastScrollY = window.scrollY; // Track last scroll position
+    function handleScroll() {
 
-    document.addEventListener('scroll', function() {
-      const zoomedIn = document.getElementById('zoomedIn');
+    const sections = document.querySelectorAll('.section');
+    
+    // Check if we're back at the header (scrolling up)
+    if (window.scrollY === 0) {
+        // Reset all sections
+        sections.forEach(section => section.classList.remove('in-view'));
 
-      if (zoomedIn.style.display === 'block') {
-          let currentScrollY = window.scrollY;
+        // Reset background color and gradient to white
+        document.body.style.backgroundColor = '#ffffff'; 
+        document.body.style.backgroundImage = ''; // Remove any gradient
 
-          // Only trigger on significant scroll down
-          if (currentScrollY > lastScrollY + 50) { 
-              currentIndex = (currentIndex + 1) % candles.length;
+        console.log('Resetting interactions and background color as we are back at the header.');
+        return; // Exit early since we're at the top
+    }
 
-              const nextCandle = candles[currentIndex];
+    // Handle section interactions
+    sections.forEach(section => {
+        if (isInView(section)) {
+            // Trigger animations when mostly in view
+            if (!section.classList.contains('in-view')) {
+                console.log('Adding in-view class:', section);
+                section.classList.add('in-view');
+            }
+        }
+    });
+    }
 
-              // Update the image and description
-              document.getElementById('zoomedImage').src = nextCandle.src;
-              document.getElementById('overlay').innerText = nextCandle.description;
+    // Trigger scroll event on page load and on scroll
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('load', handleScroll);
 
-              // Update last scroll position
-              lastScrollY = currentScrollY;
-          }
-      }
-  });
-
+})();

@@ -1,27 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Candle Showcase</title>
-
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Every Picture: Candle Collection</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-    <!-- Gallery Section -->
-    <div class="gallery">
-        <img src="images/chocolate-croissant-Background-Removed.png" alt="Lavender Bliss" onclick="showCandle(0)">
-        <img src="images/ladybird-Background-Removed.png" alt="Vanilla Dream" onclick="showCandle(1)">
-        <img src="images/pink-lavender-espresso-Background-Removed.png" alt="Rose Garden" onclick="showCandle(2)">
-        <img src="images/vanilla-chai-Background-Removed.png" alt="Chai" onclick="showCandle(3)">
-    </div>
 
-    <!-- Zoomed-In View Section -->
-    <div class="zoomed-in" id="zoomedIn">
-        <img id="zoomedImage" src="" alt="Zoomed Candle">
-        <div class="text-overlay" id="overlay"></div>
+  <!-- Header -->
+  <header class="page-header">
+    <h1>My Scented Cand<span class="flame-container">l<div class="flame"></div></span>e Collection</h1>
+    <p>Scroll down to explore...</p>
+  </header>
+
+  <!-- Candle Sections with Illustrations -->
+  <div class="section">
+    <div class="content">
+      <!-- Candle 1 -->
+      <img src="images/ladybird-Background-Removed.png" alt="Candle 1" class="candle-image candle-1">
+      <div class="text">Origin: Mother-in-Law <br>
+        Age: 11.25 months <br>
+        Usage: ⅒ jar <br>
+        Mood: Throwing open the windows <br> after cleaning <br>
+        Feels: Clean, Bright, Fresh <br>
+        Scent: 
+        </div>
+
+      <!-- Scent Illustrations -->
+      <img src="images/laundry.png" alt="Decoration 2" class="decoration decoration-2">
     </div>
+  </div>
+
+  <div class="section">
+    <div class="content">
+      <!-- Candle 2 -->
+      <img src="images/chocolate-croissant-Background-Removed.png" alt="Candle 2" class="candle-image candle-2">
+      <div class="text">Origin: Sister-in-Law <br>
+        Age: 12 months <br>
+        Usage: ½ jar <br>
+        Mood: Being home for the holidays <br>
+        Feels: Hungry, Snug, Relaxed <br>
+        Scent:
+        </div>
+
+      <!-- Scent Illustrations -->
+      <img src="images/baking.png" alt="Decoration 4" class="decoration decoration-4">
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="content">
+      <!-- Candle 3 -->
+      <img src="images/pink-lavender-espresso-Background-Removed.png" alt="Candle 3" class="candle-image candle-3">
+      <div class="text">Origin: Brother-in-Law <br>
+        Age: 11.25 months <br>
+        Usage: ⅗ jar <br>
+        Mood: Curled up under a fuzzy blanket <br> with a thriller novel<br> 
+        Feels: Cozy, Warm, Happy<br> 
+        Scent:
+        </div>
+
+      <!-- Scent Illustrations -->
+      <img src="images/espressobeans.png" alt="Decoration 6" class="decoration decoration-6">
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="content">
+      <!-- Candle 4 -->
+      <img src="images/vanilla-chai-Background-Removed.png" alt="Candle 4" class="candle-image candle-4">
+      <div class="text">Origin: Target<br> 
+        Age: 1.5 months<br> 
+        Usage: ⅔ jar<br> 
+        Mood: Focusing on work at my desk<br> 
+        Feels: Sharp, Crisp, Alert<br> 
+        Scent:
+        </div>
+
+      <!-- Scent Illustrations -->
+      <img src="images/studychai.png" alt="Decoration 8" class="decoration decoration-8">
+    </div>
+  </div>
 
 </body>
 </html>
