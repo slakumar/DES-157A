@@ -215,13 +215,13 @@ opacity :1 ;
 
 
 .section:nth-child(2)::before{
-background-image :radial-gradient(circle at center ,#ecb9e9,#1c3e6a);
+background-image :radial-gradient(circle at center ,#aba04e,#b646b0);
 }
 .section:nth-child(3)::before{
 background-image :radial-gradient(circle at center ,#2e5569,#481c0d);
 }
 .section:nth-child(4)::before{
-background-image :radial-gradient(circle at center ,#aba04e,#4a3ba0);
+background-image :radial-gradient(circle at center ,#ecb9e9,#1c3e6a );
 }
 .section:nth-child(5)::before{
 background-image :radial-gradient(circle at center ,#98b575,#621b12);
