@@ -1,0 +1,48 @@
+body {
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+main {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+article {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+      
+}
+
+article * {
+    text-align: left; 
+    max-width: 100%; 
+}
+
+
+h1 {
+    font-size: 4em;
+    color: #222;
+    padding: 40px 80px;
+    margin: 0 auto;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 600;
+    font-style: normal;
+}
+
+p {
+    max-width: 950px; 
+    margin-bottom: 1.5em;
+}
+
+
