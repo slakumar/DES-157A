@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mongoose vs. Snake</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+	<link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header id="header-container">
+        <svg width="700" height="150" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <!-- Define the gradient for the outline -->
+                <linearGradient id="gradient-outline" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#628F3E" />
+                    <stop offset="50%" stop-color="#706380" />
+                    <stop offset="100%" stop-color="#3F5C28" />
+                </linearGradient>
+            </defs>
+            <!-- Text with white fill and gradient outline -->
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+                  font-family="'Poppins', sans-serif" font-size="80" font-weight="800"
+                  fill="white" stroke="url(#gradient-outline)" stroke-width="4.5">
+                Mongoose vs. Snake
+            </text>
+        </svg>
+    </header>
+
+    <!-- Rules Button -->
+    <button id="rules-button" class="default-button">Rules</button>
+
+    <!-- Quit Button -->
+    <button id="quit-button" class="default-button" style="display: none;">Quit?</button>
+
+    <!-- Centered image container below h1 -->
+    <div id="image-container">
+        <img src="images/M_S_illustration.png" alt="Game Image" id="centered-image" width="1200px" height="auto">
+    </div>
+
+    <!-- Rules overlay -->
+    <div id="rules-overlay">
+        <div id="rules-content">
+            <h2>Game Rules</h2>
+            <p>There are two players. The player whose turn it is rolls the dice. The total of the roll is added to the current player's score, unless either die comes up as a "one". If this happens, this player's turn is over, and it is the other player’s turn.</p>
+            <p>After each roll, the current player can either roll again (assuming a "one" was not rolled) or pass to the other player. The first player to get 30 points or higher wins.</p>
+            <p>If you roll two "ones" (snake eyes), your current score gets zeroed out. So don’t do that.</p>
+            <button id="close-overlay">Close</button>
+        </div>
+    </div>
+
+    <div id="gamecontrol">
+    <!-- FIGHT! Button -->
+    <div id="fight-button-container">
+        <svg id="startgame" width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;">
+            <defs>
+                <!-- Gradient for FIGHT! -->
+                <linearGradient id="gradient-fight" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#628F3E" />
+                    <stop offset="50%" stop-color="#706380" />
+                    <stop offset="100%" stop-color="#3F5C28" />
+                </linearGradient>
+            </defs>
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+                  font-family="'Poppins', sans-serif'" font-size="60" font-weight="800"
+                  fill="white" stroke="url(#gradient-fight)" stroke-width="4">
+                FIGHT!
+            </text>
+        </svg>
+        <p id="startgame-info">(start game)</p>
+    </div>
+
+    <!-- Roll the Dice Button -->
+    <div id="roll-dice-container" style="display: none;">
+        <svg id="roll-dice-button" width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;">
+            <defs>
+                <!-- Gradient for Roll the Dice -->
+                <linearGradient id="gradient-roll-dice" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#628F3E" />
+                    <stop offset="50%" stop-color="#706380" />
+                    <stop offset="100%" stop-color="#3F5C28" />
+                </linearGradient>
+            </defs>
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+                  font-family="'Poppins', sans-serif'" font-size="60" font-weight="800"
+                  fill="white" stroke="url(#gradient-roll-dice)" stroke-width="4">
+                Roll the Dice
+            </text>
+        </svg>
+        <p id="roll-dice-info">(the game has started!)</p>
+    </div>
+</div>
+
+    <!-- Game sections -->
+    <div id="game"></div>
+    <div id="actions"></div>
+    <div id="score"></div>
+
+    <audio id="mongoose-sound" src="sounds/mongoose_sound.mp3" preload="auto"></audio>
+    <audio id="snake-sound" src="sounds/snake_sound.mp3" preload="auto"></audio>
+</body>
+</html>
