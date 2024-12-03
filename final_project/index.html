@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candle Battle!</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Top half content -->
+    <div id="top-half">
+        <div id="game">
+            <div id="dice-area">
+                <!-- Dice images will be dynamically inserted here -->
+            </div>
+            <div id="score"></div>
+            <div id="actions"></div>
+        </div>
+    </div>
+
+    <!-- Bottom half content -->
+    <div id="bottom-half">
+        <div id="gamecontrol">
+            <button id="startgame">Start Game</button>
+            <button id="rules-button">Rules</button>
+        </div>
+    </div>
+
+    <!-- Rules overlay -->
+    <div id="rules-overlay" class="overlay">
+        <div class="overlay-content">
+            <span id="close-overlay" class="close">&times;</span>
+            <h2>Game Rules</h2>
+            <p>There are two players. The player whose turn it is rolls the dice. The total of the roll is added to the current player's score, unless either die comes up as a "one". If this happens, this player's turn is over, and it is the other player’s turn.</p>
+            <p>After each roll, the current player can either roll again (assuming a "one" was not rolled) or pass to the other player. The first player to get 30 points or higher wins.</p>
+            <p>If you roll two "ones" (snake eyes), your current score gets zeroed out. So don’t do that.</p>
+        </div>
+    </div>
+
+    <!-- Player images -->
+    <img id="player1-img" class="player-img" src="images/brown.png" alt="Brown Candle">
+    <img id="player2-img" class="player-img" src="images/pink.png" alt="Pink Candle">
+
+    <!-- Audio elements for sound effects -->
+    <audio id="button-click-sound" src="sounds/button-click.mp3" preload="auto"></audio>
+    <audio id="game-music" src="sounds/game-music.mp3" loop></audio>
+    <audio id="win-music" src="sounds/win-music.mp3" loop></audio>
+</body>
+
+</html>
