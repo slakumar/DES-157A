@@ -5,24 +5,24 @@ body {
     color: #ffff;
     margin: 0;
     padding: 0;
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
     display: flex;
     flex-direction: column;
-    background-image: url('images/starbackground.png'); /* Path to your background image */
-    background-size: cover; /* Ensures the image covers the entire element */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-image: url('images/starbackground.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
 #top-half {
-    flex: 1; /* Take up half of the viewport height */
+    flex: 1; 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #bottom-half {
-    flex: 1; /* Take up the other half of the viewport height */
+    flex: 1; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +30,7 @@ body {
 
 #gamecontrol {
     display: flex;
-    gap: 10px; /* Space between buttons */
+    gap: 10px; 
 }
 
 button {
@@ -50,7 +50,7 @@ button {
    width:100%; 
    height:100%; 
    background-color:rgba(0,0,0,0.6); 
-   z-index: 1000; /* Ensure overlay is on top */
+   z-index: 1000; 
 }
 
 .overlay-content {
@@ -68,7 +68,7 @@ button {
    top:10px; 
    right:20px; 
    font-size:30px; 
-   cursor: pointer; /* Change cursor to pointer on hover */
+   cursor: pointer; 
 }
 
 
@@ -81,13 +81,13 @@ button {
 
 #dice-area, #score, #actions {
    text-align:center; 
-   margin-bottom:10px; /* Add some spacing between elements */
+   margin-bottom:10px; 
 }
 
 .player-img {
-    width: 450px; /* Adjust size as needed */
+    width: 450px; 
     position: absolute;
-    animation: hoverUpDown 2s infinite alternate ease-in-out; /* Infinite loop */
+    animation: hoverUpDown 2s infinite alternate ease-in-out; 
 }
 
 @keyframes hoverUpDown {
@@ -95,26 +95,24 @@ button {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px); /* Move up */
+        transform: translateY(-10px); 
     }
     100% {
-        transform: translateY(0); /* Move back to original position */
+        transform: translateY(0); 
     }
 }
 
 #player1-img {
-    top: 46%; /* Adjust for vertical positioning */
-    left: 70px; /* Fixed position on the left */
+    top: 46%; 
+    left: 70px; 
  }
  
  #player2-img {
-    bottom: 13%; /* Adjust for vertical positioning */
-    right:90px; /* Fixed position on the right */
+    bottom: 13%; 
+    right:90px; 
     width: 300px
  }
 
-
-/* Winning gif styles */
 .winner-gif {
    width:auto;  
 }
