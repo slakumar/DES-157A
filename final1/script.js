@@ -80,7 +80,7 @@
 
    function throwDice() {
     console.log('dice throw');
-       actionArea.innerHTML = ''; 
+    //    actionArea.innerHTML = ''; 
        // Clear existing action content
        gameData.roll1 = Math.floor(Math.random() * 6) + 1;
        gameData.roll2 = Math.floor(Math.random() * 6) + 1;
