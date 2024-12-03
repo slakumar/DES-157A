@@ -74,13 +74,14 @@
        
        // Ensure dice area is cleared before adding new content
     //    actionArea.innerHTML = ''; 
-       actionArea.innerHTML = `<button id="roll">Roll the dice</button>`;
+       actionArea.innerHTML = '<button id="roll">Roll the dice</button>';
        document.getElementById('roll').addEventListener('click', throwDice);
    }
 
    function throwDice() {
     console.log('dice throw');
-       actionArea.innerHTML = ''; // Clear existing action content
+    //    actionArea.innerHTML = ''; 
+       // Clear existing action content
        gameData.roll1 = Math.floor(Math.random() * 6) + 1;
        gameData.roll2 = Math.floor(Math.random() * 6) + 1;
        game.innerHTML = `<p>Roll the dice for ${gameData.players[gameData.index]}</p>`;
