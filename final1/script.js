@@ -22,9 +22,9 @@
     let quitButton;
 
     const gameData = {
-        dice: ['images/Group_1.png', 'images/Group_2.png',
-            'images/Group_3.png', 'images/Group_4.png',
-            'images/Group_5.png', 'images/Group_6.png'],
+        dice: ['images/Dice_1.png', 'images/Dice_2.png',
+            'images/Dice_3.png', 'images/Dice_4.png',
+            'images/Dice_5.png', 'images/Dice_6.png'],
         players: ['Brown', 'Pink'],
         score: [0, 0],
         roll1: 0,

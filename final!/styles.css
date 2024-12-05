@@ -34,12 +34,13 @@ body {
 }
 
 button {
-    padding: 10px 15px;
+    padding: 10px 10px;
     font-family: "Jersey 10", sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 2em;
     color: rgb(142, 53, 226);
+    cursor: pointer;
 }
 
 .overlay {
@@ -113,6 +114,40 @@ button {
     width: 300px
  }
 
-.winner-gif {
-   width:80%;  
+ #player1-img.winner-gif {
+   width:50%;
+   position: absolute;  
+   left: 70px;
+   top: 46%;
+}
+
+#player2-img.winner-gif {
+    width:50%;  
+    position: absolute;
+    right: 90px;
+    bottom: 13%;
+ }
+
+#game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
+}
+
+#game img {
+    width: 100px; 
+    height: 100px; 
+}
+
+#score1 {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+#score2 {
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
