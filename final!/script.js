@@ -5,8 +5,10 @@
     const startGame = document.querySelector('#startgame');
     const gameControl = document.querySelector('#gamecontrol');
     const game = document.querySelector('#game');
-    const score = document.querySelector('#score');
-    const actionArea = document.querySelector('#actions');
+    const score1 = document.querySelector('#player1-score');
+    const score2 = document.querySelector('#player2-score');
+    const message = document.querySelector('.message');
+    const diceArea = document.querySelector('#dice-area');
 
     // Audio elements
     const gameMusic = document.getElementById('game-music');
@@ -71,10 +73,10 @@
 
     // Function to set up a player's turn
     function setUpTurn() {
-        game.innerHTML = `<p>Roll the dice for ${gameData.players[gameData.index]}</p>`;
+        message.innerHTML = `<p>Roll the dice for ${gameData.players[gameData.index]}</p>`;
         
         // Clear the action area and add a new Roll Dice button
-        actionArea.innerHTML = '<button id="roll">Roll Dice</button>';
+        game.innerHTML = '<button id="roll">Roll Dice</button>';
         
         // Attach event listener to the Roll Dice button
         document.getElementById('roll').addEventListener('click', throwDice);
@@ -89,28 +91,27 @@
         gameData.roll2 = Math.floor(Math.random() * 6) + 1;
         
         // Update the game area with dice images and results
-        game.innerHTML = `<p>Roll the dice for ${gameData.players[gameData.index]}</p>`;
-        game.innerHTML += `<img src="${gameData.dice[gameData.roll1 - 1]}">
-                           <img src="${gameData.dice[gameData.roll2 - 1]}">`;
+        message.innerHTML = `<p>Roll the dice for ${gameData.players[gameData.index]}</p>`;
+        diceArea.innerHTML = `<img src="${gameData.dice[gameData.roll1 - 1]}" id= "dice1">
+                           <img src="${gameData.dice[gameData.roll2 - 1]}" id="dice2">`;
         
         gameData.rollSum = gameData.roll1 + gameData.roll2;
 
         if (gameData.rollSum === 2) { // Snake Eyes condition
-            game.innerHTML += '<p>Oh Snap! Snake Eyes! Your score resets to zero.</p>';
+            message.innerHTML = '<p>Oh Snap! Snake Eyes! Your score resets to zero.</p>';
             gameData.score[gameData.index] = 0; // Reset current player's score
             switchPlayer();
             setTimeout(setUpTurn, 2000); // Delay before switching turns
         } else if (gameData.roll1 === 1 || gameData.roll2 === 1) { // Roll contains a "1"
             switchPlayer();
             setTimeout(setUpTurn, 2000); // Delay before switching turns
-            game.innerHTML += `<p>Sorry, you rolled a one! Switching to ${gameData.players[gameData.index]}.</p>`;
+            message.innerHTML = `<p>Sorry, you rolled a one! Switching to ${gameData.players[gameData.index]}.</p>`;
         } else { // Valid roll, add to score
             gameData.score[gameData.index] += gameData.rollSum;
             checkWinningCondition(); // Check if current player has won
 
             if (gameData.score[gameData.index] < gameData.gameEnd) {
-                actionArea.innerHTML = '<button id="rollagain">Roll Again</button> or <button id="pass">Pass</button>';
-                
+                game.innerHTML = '<button id="rollagain">Roll Again</button> or <button id="pass">Pass</button>';
                 // Event listeners for Roll Again and Pass buttons
                 document.getElementById('rollagain').addEventListener('click', throwDice);
                 document.getElementById('pass').addEventListener('click', function () {
@@ -128,8 +129,8 @@
 
     function checkWinningCondition() {
         if (gameData.score[gameData.index] >= gameData.gameEnd) { // Player wins
-            score.innerHTML = `<h2>${gameData.players[gameData.index]} Wins With ${gameData.score[gameData.index]} Points!</h2>`;
-            actionArea.innerHTML = ''; // Clear action area
+            message.innerHTML = `<h2>${gameData.players[gameData.index]} Wins With ${gameData.score[gameData.index]} Points!</h2>`;
+            game.innerHTML = ''; // Clear action area
 
             // Stop current music and play win music
             gameMusic.pause();
@@ -155,7 +156,8 @@
                 winMusic.pause(); // Stop win music when starting a new game
             });
         } else { 
-            score.innerHTML = `<p>The score is currently <strong>${gameData.players[0]}: ${gameData.score[0]}</strong> and <strong>${gameData.players[1]}: ${gameData.score[1]}</strong></p>`;
+            score1.innerHTML = `${gameData.score[0]}`;
+            score2.innerHTML = `${gameData.score[1]}`;
         }
     }
 })();

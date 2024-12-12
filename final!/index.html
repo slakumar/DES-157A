@@ -13,20 +13,17 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Top half content -->
-    <div id="top-half">
-        <div id="game">
-            <div id="dice-area">
-                <!-- Dice images will be dynamically inserted here -->
-            </div>
-            
-        </div>
-        <div id="score"></div>
+    <!-- Top half content  -->
+    <!-- <div id="top-half">
+        <div id="game"></div>
+
         <div id="actions"></div>
-    </div>
+    </div> -->
 
     <!-- Bottom half content -->
     <div id="bottom-half">
+        <div id="game"></div>
+        <!-- <div id="actions"></div> -->
         <div id="gamecontrol">
             <button id="startgame">Start Game</button>
             <button id="rules-button">Rules</button>
@@ -48,12 +45,30 @@
     <img id="player1-img" class="player-img" src="images/brown.png" alt="Brown Candle">
     <img id="player2-img" class="player-img" src="images/pink.png" alt="Pink Candle">
 
-    <!-- Player Scores -->
-    <div id="score1"></div>
-    <div id="score2"></div>
+    <div class="scoreboard">
+        <div class="score-container">
+            <div class="player-score" id="player1-score">0</div>
+            <!-- <div class="player-name-1">BROWN</div> -->
+
+          <!-- <div id="dice-area">
+          </div> -->
+            <div class="player-score" id="player2-score">0</div>
+            <!-- <div class="player-name-2">PINK</div> -->
+        </div>
+   
+        <div id="actions">
+            <div class="player-name-1">BROWN</div>
+            <div id="dice-area">
+                <!-- Dice images will be dynamically inserted here -->
+              </div>
+            <div class = "message"></div>
+            <div class="player-name-2">PINK</div>
+
+        </div>
+
+    </div>
 
     <!-- Audio elements for sound effects -->
-    <audio id="button-click-sound" src="sounds/button-click.mp3" preload="auto"></audio>
     <audio id="game-music" src="sounds/game-music.mp3" loop></audio>
     <audio id="win-music" src="sounds/win-music.mp3" loop></audio>
 </body>

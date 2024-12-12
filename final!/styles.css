@@ -1,3 +1,4 @@
+
 body {
     font-family: "Jersey 10", sans-serif;
     font-weight: 400;
@@ -31,6 +32,9 @@ body {
 #gamecontrol {
     display: flex;
     gap: 10px; 
+    /* transform: translateX(-150px); */
+    align-items: center;
+    position: fixed;
 }
 
 button {
@@ -73,16 +77,18 @@ button {
 }
 
 
-#game {
-   display:flex; 
-   flex-direction:column; 
-   justify-content:center; 
-   align-items:center; 
+
+ #dice-area, #score {
+   text-align:center; 
+   /* margin-bottom:10px;  */
+   align-self: center;
 }
 
-#dice-area, #score, #actions {
-   text-align:center; 
-   margin-bottom:10px; 
+
+#dice1, #dice2 {
+    width: 10%;
+    align-self: center;
+    transform: translateY(20px);
 }
 
 .player-img {
@@ -117,22 +123,27 @@ button {
  #player1-img.winner-gif {
    width:50%;
    position: absolute;  
-   left: 70px;
+   left: 180px;
    top: 46%;
+   transform: translate(-250px, -250px);
+
 }
 
 #player2-img.winner-gif {
     width:50%;  
     position: absolute;
-    right: 90px;
+    right: 110px;
     bottom: 13%;
+    transform: translateX(250px);
  }
 
 #game {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     gap: 20px; 
+    transform: translate(2px, -100px);
+    align-self: center;
 }
 
 #game img {
@@ -140,14 +151,89 @@ button {
     height: 100px; 
 }
 
-#score1 {
-    position: absolute;
-    left: 20px;
+.scoreboard {
+    position: fixed;
     top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* display: flex; */
+    /* gap: 10px; */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px 40px;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    width: 40%;
+    height: 10%;
+
 }
 
-#score2 {
+.score-container{
+    display: flex;
+    /* flex-direction: row; */
+    /* text-align: center; */
+    /* gap: 30px; */
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+.player-score {
+    font-size: 4em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    /* justify-self: center; */
+}
+
+.player-name-1 {
+    font-size: 1.5em;
+    color: #8e8e8e;
+    margin-top: 5px;
     position: absolute;
-    right: 20px;
-    top: 20px;
+    bottom: 10px;
+    left: 20px;
+    justify-self:center;
+}
+
+.player-name-2 {
+    font-size: 1.5em;
+    color: #8e8e8e;
+    margin-top: 5px;
+    position: absolute;
+    right:20px;
+    bottom: 10px;
+    justify-self: center;
+
+}
+
+#player1-score{
+    position: absolute;
+    left: 25px;
+    bottom: 50px;
+}
+
+#player2-score{
+    position: absolute;
+    right: 25px;
+    bottom: 50px;
+}
+
+#actions{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.message{
+    transform: translateY(75px);
+    position: fixed;
+}
+.message h2 {
+    margin: auto;
+}
+
+#rollagain, #pass{
+    transform: translateY(-15px);
 }
